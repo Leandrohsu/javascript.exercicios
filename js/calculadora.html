@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculadora Simples em JavaScript</h2><br>
+<h3>Usar o console!</h3><br>
+<h3>Bora calcular!</h3>
+
+
+<script>
+    
+function calculadora(num1, num2, operacao) {
+    if(!["+","-","*","/","%"].includes(operador))
+    throw new Error("Operador não existente")
+
+  if (typeof num1 !== "number") {
+    throw new Error("A parametrização está inválida.");
+  }
+  if (typeof num2 !== "number") {
+    throw new Error("A parametrização está inválida.");
+  }
+  switch (operacao) {
+    case "+":
+      return num1 + num2;
+    case "-":
+      return num1 - num2;
+    case "*":
+      return num1 * num2;
+    case "/":
+      return num1 / num2;
+      if(num2 == 0){
+        throw new Error ("A operação não pode ser executada pois divisor não pode ser igual a 0")
+      }
+    case "%":
+        if(num2 == 0){
+            throw new Error ("Operação não pode ser executada pois divisor não pode ser igual a 0")
+        }
+      return num1 % num2;
+    default:
+      throw new Error("O operador parametrizado não é válido nesta função.");
+  }
+}
+try{(1,0,"/")
+}catch (e){
+    console.log("Houve um erro");
+}
+</script>
+
+</body>
+</html>

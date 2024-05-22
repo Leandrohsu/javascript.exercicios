@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio LocalStorage</title>
+</head>
+<body>
+    <h1>Exercicio LocalStorage</h1><br>
+    <input id="texto" type="text" placeholder="texto">
+    <button onclick="Adicionar()">Salvar</button>
+    <button id="texto_deletar" onclick="Excluir()">Deletar</button>
+<script>
+    function Adicionar(){
+        const salvar_texto = document.getElementById("texto").value;
+        localStorage.setItem("local-texto", JSON.stringify(salvar_texto))
+        alert("Texto Salvo");
+    }
+    function Excluir(){
+        const deletar_texto = document.getElementById("texto").value;
+        localStorage.removeItem("local-texto", JSON.stringify(deletar_texto));
+        document.getElementById("texto").value = "";
+        alert("texto deletado");
+
+    }
+
+</script>
+</body>
+</html>
